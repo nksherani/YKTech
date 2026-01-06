@@ -68,27 +68,6 @@ const Hero = () => {
             Get in Touch
           </a>
         </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto"
-        >
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div className="text-4xl font-bold text-white mb-2">10+</div>
-            <div className="text-primary-200">Years Experience</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div className="text-4xl font-bold text-white mb-2">100+</div>
-            <div className="text-primary-200">Projects Delivered</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div className="text-4xl font-bold text-white mb-2">98%</div>
-            <div className="text-primary-200">Client Satisfaction</div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

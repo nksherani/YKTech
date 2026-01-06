@@ -112,30 +112,6 @@ const Contact = () => {
                 )
               })}
             </div>
-
-            {/* Business Hours */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-8 p-6 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl text-white"
-            >
-              <h4 className="text-xl font-bold mb-4">Business Hours</h4>
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span>Monday - Friday:</span>
-                  <span className="font-semibold">9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span className="font-semibold">10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span className="font-semibold">Closed</span>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Contact Form */}

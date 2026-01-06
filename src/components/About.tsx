@@ -48,57 +48,25 @@ const About = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              Empowering Businesses Through Technology
-            </h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              At YK Tech Solutions, we believe in the transformative power of technology. Our team of expert developers, AI specialists, and cloud architects work together to deliver solutions that not only meet today's needs but anticipate tomorrow's challenges.
-            </p>
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              We specialize in emerging technologies like Agentic AI and combine them with proven platforms and frameworks to create robust, scalable, and intelligent solutions. Whether you're looking to automate complex business processes, migrate to the cloud, or build custom applications, we have the expertise to make it happen.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Our commitment to excellence, innovation, and customer satisfaction has made us a preferred technology partner for businesses across insurance, audit, e-commerce, and various other industries.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="relative"
-          >
-            <div className="relative bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-8 shadow-2xl">
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full blur-2xl opacity-50"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-400 rounded-full blur-2xl opacity-50"></div>
-              
-              <div className="relative space-y-6 text-white">
-                <div>
-                  <div className="text-5xl font-bold mb-2">10+</div>
-                  <div className="text-primary-100">Years of Excellence</div>
-                </div>
-                <div className="border-t border-white/20 pt-6">
-                  <div className="text-5xl font-bold mb-2">100+</div>
-                  <div className="text-primary-100">Successful Projects</div>
-                </div>
-                <div className="border-t border-white/20 pt-6">
-                  <div className="text-5xl font-bold mb-2">50+</div>
-                  <div className="text-primary-100">Happy Clients</div>
-                </div>
-                <div className="border-t border-white/20 pt-6">
-                  <div className="text-5xl font-bold mb-2">24/7</div>
-                  <div className="text-primary-100">Support Available</div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-16 max-w-4xl mx-auto"
+        >
+          <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Empowering Businesses Through Technology
+          </h3>
+          <p className="text-gray-600 mb-4 leading-relaxed text-center">
+            At YK Tech Solutions, we believe in the transformative power of technology. Our team of expert developers, AI specialists, and cloud architects work together to deliver solutions that not only meet today's needs but anticipate tomorrow's challenges.
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed text-center">
+            We specialize in emerging technologies like Agentic AI and combine them with proven platforms and frameworks to create robust, scalable, and intelligent solutions. Whether you're looking to automate complex business processes, migrate to the cloud, or build custom applications, we have the expertise to make it happen.
+          </p>
+          <p className="text-gray-600 leading-relaxed text-center">
+            Our commitment to excellence, innovation, and customer satisfaction has made us a preferred technology partner for businesses across insurance, audit, e-commerce, and various other industries.
+          </p>
+        </motion.div>
 
         {/* Values Grid */}
         <motion.div
