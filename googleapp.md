@@ -1,5 +1,5 @@
 
-const NOTIFY_EMAIL = "shhzbsaleem@gmail.com";
+const NOTIFY_EMAIL = "xym@zyz.com";
 
 function doPost(e) {
   try {
