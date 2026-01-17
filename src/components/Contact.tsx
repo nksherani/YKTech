@@ -33,7 +33,7 @@ const Contact = () => {
       toast.error("Please enter a valid email address");
       return;
     }
-
+    
     if (!GOOGLE_SCRIPT_URL) {
       toast.error("Form service is not configured");
       return;
@@ -73,14 +73,14 @@ const Contact = () => {
         phone: normalizedPhone,
         country,
       };
-
+      
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         body: JSON.stringify(payload),
       });
-
+      
       const result = await response.text();
-
+      console.log("Submission result:", result);
       if (result === "OK") {
         toast.success("Message sent successfully!");
         setFormData({

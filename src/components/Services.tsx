@@ -1,46 +1,55 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Brain, Cloud, Code, Zap, Database, LineChart } from 'lucide-react'
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Brain, Cloud, Code, Zap, Database, LineChart } from "lucide-react";
 
 const Services = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const services = [
     {
       icon: Brain,
-      title: 'Agentic AI Solutions',
-      description: 'Leverage cutting-edge AI technologies to automate and optimize your business processes',
-      technologies: ['OpenAI', 'Azure AI', 'MCP', 'Zapier', 'n8n'],
-      industries: ['Insurance', 'Audit Firms', 'E-commerce'],
-      color: 'from-purple-500 to-pink-500',
+      title: "Agentic AI Solutions",
+      description:
+        "Leverage cutting-edge AI technologies to automate and optimize your business processes",
+      technologies: ["OpenAI", "Azure AI", "MCP", "Zapier", "n8n"],
+      industries: ["Insurance", "Audit Firms", "E-commerce"],
+      color: "from-purple-500 to-pink-500",
     },
     {
       icon: Cloud,
-      title: 'Cloud Services & Integration',
-      description: 'Comprehensive cloud solutions to scale your infrastructure and optimize operations',
-      technologies: ['Azure', 'AWS', 'Cloud Migration', 'DevOps'],
-      industries: ['Enterprise', 'Startups', 'SMBs'],
-      color: 'from-blue-500 to-cyan-500',
+      title: "Cloud Services & Integration",
+      description:
+        "Comprehensive cloud solutions to scale your infrastructure and optimize operations",
+      technologies: ["Azure", "AWS", "Cloud Migration", "DevOps"],
+      industries: ["Enterprise", "Startups", "SMBs"],
+      color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Code,
-      title: 'Custom Software Development',
-      description: 'Tailored software solutions built with modern technologies and best practices',
-      technologies: ['.NET', 'Node.js', 'Python', 'React', 'Next.js'],
-      industries: ['All Industries'],
-      color: 'from-green-500 to-emerald-500',
+      title: "Custom Software Development",
+      description:
+        "Tailored software solutions built with modern technologies and best practices",
+      technologies: [".NET", "Node.js", "Python", "React", "Next.js"],
+      industries: ["All Industries"],
+      color: "from-green-500 to-emerald-500",
     },
     {
       icon: Zap,
-      title: 'Microsoft Power Platform',
-      description: 'Transform your business with low-code/no-code solutions and business intelligence',
-      technologies: ['Power Apps', 'Power Automate', 'Dynamics 365', 'Power BI'],
-      industries: ['Enterprise', 'Manufacturing', 'Retail'],
-      color: 'from-orange-500 to-red-500',
+      title: "Microsoft Power Platform",
+      description:
+        "Transform your business with low-code/no-code solutions and business intelligence",
+      technologies: [
+        "Power Apps",
+        "Power Automate",
+        "Dynamics 365",
+        "Power BI",
+      ],
+      industries: ["Enterprise", "Manufacturing", "Retail"],
+      color: "from-orange-500 to-red-500",
     },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -50,7 +59,7 @@ const Services = () => {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -59,10 +68,9 @@ const Services = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
       },
     },
-  }
+  };
 
   return (
     <section id="services" className="py-20 bg-gray-50">
@@ -78,7 +86,8 @@ const Services = () => {
             Our Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive technology solutions designed to drive innovation and accelerate your digital transformation
+            Comprehensive technology solutions designed to drive innovation and
+            accelerate your digital transformation
           </p>
         </motion.div>
 
@@ -89,7 +98,7 @@ const Services = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {services.map((service, index) => {
-            const Icon = service.icon
+            const Icon = service.icon;
             return (
               <motion.div
                 key={index}
@@ -97,11 +106,15 @@ const Services = () => {
                 className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
                 {/* Gradient background on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                ></div>
+
                 <div className="relative">
                   {/* Icon */}
-                  <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.color} mb-6 shadow-lg`}>
+                  <div
+                    className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.color} mb-6 shadow-lg`}
+                  >
                     <Icon className="w-8 h-8 text-white" />
                   </div>
 
@@ -111,13 +124,13 @@ const Services = () => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 mb-6">
-                    {service.description}
-                  </p>
+                  <p className="text-gray-600 mb-6">{service.description}</p>
 
                   {/* Technologies */}
                   <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Technologies:</h4>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                      Technologies:
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {service.technologies.map((tech, i) => (
                         <span
@@ -132,7 +145,9 @@ const Services = () => {
 
                   {/* Industries */}
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Industries:</h4>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                      Industries:
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {service.industries.map((industry, i) => (
                         <span
@@ -148,13 +163,23 @@ const Services = () => {
                   {/* Hover effect arrow */}
                   <div className="mt-6 flex items-center text-primary-600 font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     Learn more
-                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <svg
+                      className="w-5 h-5 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
                     </svg>
                   </div>
                 </div>
               </motion.div>
-            )
+            );
           })}
         </motion.div>
 
@@ -169,24 +194,29 @@ const Services = () => {
             <div className="text-center">
               <Database className="w-12 h-12 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Data-Driven</h3>
-              <p className="text-primary-100">Leverage analytics and insights for informed decision-making</p>
+              <p className="text-primary-100">
+                Leverage analytics and insights for informed decision-making
+              </p>
             </div>
             <div className="text-center">
               <Zap className="w-12 h-12 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Rapid Deployment</h3>
-              <p className="text-primary-100">Fast implementation with minimal disruption to your operations</p>
+              <p className="text-primary-100">
+                Fast implementation with minimal disruption to your operations
+              </p>
             </div>
             <div className="text-center">
               <LineChart className="w-12 h-12 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Scalable Solutions</h3>
-              <p className="text-primary-100">Built to grow with your business needs and demands</p>
+              <p className="text-primary-100">
+                Built to grow with your business needs and demands
+              </p>
             </div>
           </div>
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Services
-
+export default Services;
