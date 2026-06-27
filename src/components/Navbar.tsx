@@ -1,75 +1,92 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Link, useLocation } from 'react-router-dom'
 
-interface NavbarProps {
-  scrolled: boolean
-}
-
-const Navbar = ({ scrolled }: NavbarProps) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const { pathname } = useLocation()
+
+  const isHome = pathname === '/'
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // On interior pages there is no dark hero, so the bar is always solid.
+  const solid = scrolled || !isHome
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', to: '/' },
+    { name: 'Services', to: '/#services' },
+    { name: 'Products', to: '/products' },
+    { name: 'About', to: '/#about' },
+    { name: 'Contact', to: '/#contact' },
   ]
 
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        solid ? 'bg-white/95 backdrop-blur shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="flex-shrink-0"
           >
-            <a href="#home" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <span
                 className={`text-2xl font-bold ${
-                  scrolled ? 'text-primary-600' : 'text-white'
+                  solid ? 'text-primary-600' : 'text-white'
                 }`}
               >
                 YK Tech Solutions
               </span>
-            </a>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link, index) => (
-                <motion.a
+                <motion.div
                   key={link.name}
-                  href={link.href}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`px-3 py-2 text-sm font-medium transition-colors ${
-                    scrolled
-                      ? 'text-gray-700 hover:text-primary-600'
-                      : 'text-white hover:text-primary-200'
-                  }`}
                 >
-                  {link.name}
-                </motion.a>
+                  <Link
+                    to={link.to}
+                    className={`px-3 py-2 text-sm font-medium transition-colors ${
+                      solid
+                        ? 'text-gray-700 hover:text-primary-600'
+                        : 'text-white hover:text-primary-200'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
-              <motion.a
-                href="#contact"
+              <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors"
+                transition={{ duration: 0.5, delay: 0.5 }}
               >
-                Get Started
-              </motion.a>
+                <Link
+                  to="/#contact"
+                  className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors"
+                >
+                  Get Started
+                </Link>
+              </motion.div>
             </div>
           </div>
 
@@ -77,9 +94,8 @@ const Navbar = ({ scrolled }: NavbarProps) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md ${
-                scrolled ? 'text-gray-700' : 'text-white'
-              }`}
+              aria-label="Toggle navigation menu"
+              className={`p-2 rounded-md ${solid ? 'text-gray-700' : 'text-white'}`}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -96,22 +112,22 @@ const Navbar = ({ scrolled }: NavbarProps) => {
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.to}
                 className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              to="/#contact"
               className="block w-full text-center bg-primary-600 text-white px-3 py-2 rounded-md hover:bg-primary-700 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Get Started
-            </a>
+            </Link>
           </div>
         </motion.div>
       )}
@@ -120,4 +136,3 @@ const Navbar = ({ scrolled }: NavbarProps) => {
 }
 
 export default Navbar
-

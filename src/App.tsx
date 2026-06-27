@@ -1,33 +1,38 @@
-import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Services from './components/Services'
-import About from './components/About'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
+import Home from './pages/Home'
+import Products from './pages/Products'
+import PrivacyPolicy from './pages/legal/PrivacyPolicy'
+import Terms from './pages/legal/Terms'
+import CookiePolicy from './pages/legal/CookiePolicy'
+import AcceptableUse from './pages/legal/AcceptableUse'
+import ChildrensPrivacy from './pages/legal/ChildrensPrivacy'
+import RefundPolicy from './pages/legal/RefundPolicy'
+import NotFound from './pages/NotFound'
 
 function App() {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar scrolled={scrolled} />
-      <Hero />
-      <Services />
-      <About />
-      <Contact />
+    <div className="min-h-screen bg-white flex flex-col">
+      <ScrollToTop />
+      <Navbar />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/acceptable-use" element={<AcceptableUse />} />
+          <Route path="/childrens-privacy" element={<ChildrensPrivacy />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   )
 }
 
 export default App
-
