@@ -10,7 +10,8 @@ const RefundPolicy = () => {
       body: (
         <p>
           This Refund &amp; Cancellation Policy explains how purchases, subscriptions, free trials, and
-          refunds work across the {company.legalName} products. It supplements our{' '}
+          refunds work across the {company.legalName} (d/b/a {company.dba}) products. It supplements
+          our{' '}
           <Link to="/terms">Terms &amp; Conditions</Link>. Because most purchases are made through app
           stores, the relevant store&rsquo;s policies will also apply and may take precedence for those
           transactions.

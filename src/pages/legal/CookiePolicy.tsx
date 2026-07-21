@@ -12,7 +12,8 @@ const CookiePolicy = () => {
           <p>
             Cookies are small text files placed on your device when you visit a website. They are
             widely used to make websites work, to improve efficiency, and to provide reporting
-            information. This Cookie Policy explains how {company.legalName} uses cookies and similar
+            information. This Cookie Policy explains how {company.legalName}, doing business as{' '}
+            {company.dba}, uses cookies and similar
             technologies (such as local storage, pixels, and SDKs) on our website and in our
             applications.
           </p>

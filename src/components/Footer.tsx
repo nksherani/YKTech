@@ -134,7 +134,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
-              © {currentYear} {company.legalName}. All rights reserved.
+              © {currentYear} {company.legalNameWithDba}. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <Link to="/privacy-policy" className="hover:text-primary-400 transition-colors">

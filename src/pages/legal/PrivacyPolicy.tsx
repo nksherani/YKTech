@@ -4,7 +4,7 @@ import { company } from '../../data/company'
 
 const ContactBlock = () => (
   <address className="not-italic">
-    {company.legalName}
+    {company.legalNameWithDba}
     <br />
     {company.address.line1}
     <br />
@@ -25,7 +25,8 @@ const PrivacyPolicy = () => {
       body: (
         <>
           <p>
-            {company.legalName} (“{company.name}”, “we”, “us”, or “our”) is committed to protecting
+            {company.legalName}, doing business as {company.dba} (“{company.name}”, “we”, “us”, or
+            “our”) is committed to protecting
             your privacy and handling your personal data transparently and responsibly. This Privacy
             Policy explains what information we collect, why we collect it, how we use and share it,
             and the rights and choices available to you.

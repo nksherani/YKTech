@@ -11,8 +11,9 @@ const Terms = () => {
         <>
           <p>
             These Terms and Conditions (“Terms”) form a legally binding agreement between you and{' '}
-            {company.legalName} (“{company.name}”, “we”, “us”, or “our”) governing your access to and
-            use of our website, applications, and related services (collectively, the “Services”).
+            {company.legalName}, doing business as {company.dba} (“{company.name}”, “we”, “us”, or
+            “our”) governing your access to and use of our website, applications, and related
+            services (collectively, the “Services”).
           </p>
           <p>
             By accessing or using the Services, creating an account, or clicking to accept these

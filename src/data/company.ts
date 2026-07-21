@@ -1,6 +1,11 @@
 export const company = {
   name: 'YK Tech Solutions',
-  legalName: 'YK Tech Solutions LLC',
+  /** Legal entity name (Coders Ventures LLC); DBA / assumed name is `name`. */
+  legalName: 'Coders Ventures LLC',
+  /** Assumed name (DBA) filed with the Texas Secretary of State. */
+  dba: 'YK Tech Solutions',
+  /** Legal name with DBA for copyright lines and contact blocks. */
+  legalNameWithDba: 'Coders Ventures LLC d/b/a YK Tech Solutions',
   shortName: 'YK Tech',
   domain: 'yk-techsolutions.com',
   website: 'https://www.yk-techsolutions.com',

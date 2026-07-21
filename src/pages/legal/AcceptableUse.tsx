@@ -10,7 +10,8 @@ const AcceptableUse = () => {
       body: (
         <p>
           This Acceptable Use Policy (“AUP”) sets out the rules for using the Services provided by{' '}
-          {company.legalName}. It is incorporated into and forms part of our{' '}
+          {company.legalName}, doing business as {company.dba}. It is incorporated into and forms
+          part of our{' '}
           <Link to="/terms">Terms &amp; Conditions</Link>. By using the Services, you agree to comply
           with this AUP. We may update it from time to time, and continued use means you accept the
           changes.

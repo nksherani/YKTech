@@ -10,7 +10,8 @@ const ChildrensPrivacy = () => {
       body: (
         <>
           <p>
-            This Children&rsquo;s Privacy Notice explains how {company.legalName} approaches the
+            This Children&rsquo;s Privacy Notice explains how {company.legalName}, doing business as{' '}
+            {company.dba}, approaches the
             privacy of children who use <em>Alice&rsquo;s Adventures Learner</em>, our educational
             literacy app for children ages 5–10. It supplements our general{' '}
             <Link to="/privacy-policy">Privacy Policy</Link> and is designed to comply with the U.S.
@@ -167,7 +168,7 @@ const ChildrensPrivacy = () => {
             privacy, please contact us at:
           </p>
           <address className="not-italic">
-            {company.legalName}
+            {company.legalNameWithDba}
             <br />
             {company.address.full}
             <br />
