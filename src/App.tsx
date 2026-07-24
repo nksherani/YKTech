@@ -10,6 +10,7 @@ import CookiePolicy from './pages/legal/CookiePolicy'
 import AcceptableUse from './pages/legal/AcceptableUse'
 import ChildrensPrivacy from './pages/legal/ChildrensPrivacy'
 import RefundPolicy from './pages/legal/RefundPolicy'
+import DataDeletion from './pages/legal/DataDeletion'
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/acceptable-use" element={<AcceptableUse />} />
           <Route path="/childrens-privacy" element={<ChildrensPrivacy />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/data-deletion" element={<DataDeletion />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

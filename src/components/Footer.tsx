@@ -20,6 +20,7 @@ const Footer = () => {
     { name: 'Acceptable Use Policy', to: '/acceptable-use' },
     { name: "Children's Privacy", to: '/childrens-privacy' },
     { name: 'Refund & Cancellation', to: '/refund-policy' },
+    { name: 'Data Deletion Instructions', to: '/data-deletion' },
   ]
 
   const socialLinks = [
